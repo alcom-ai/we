@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westera Hotel & Resort | Manavgat, Antalya</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #2b1810;
+            --secondary-dark: #3d2314;
+            --accent-bronze: #c59b27;
+            --accent-copper: #a75d22;
+            --bg-sand: #fbf9f5;
+            --card-bg: #ffffff;
+            --text-main: #33221a;
+            --text-muted: #6b5344;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-sand);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header & Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(43, 24, 16, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 155, 39, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--accent-bronze);
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #f1ebd9;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-bronze);
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, var(--accent-bronze), var(--accent-copper));
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('ChatGPT Image 23 Eyl 2026 19_27_01.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            color: #fceea7;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #e8dfd1;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--accent-bronze);
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn-main:hover {
+            background: #d4a930;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        /* Grid Layouts */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(43,24,16,0.06);
+            border: 1px solid rgba(197, 155, 39, 0.15);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(43,24,16,0.12);
+        }
+
+        .feature-img {
+            height: 240px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .feature-body {
+            padding: 25px;
+        }
+
+        .feature-body h3 {
+            font-size: 22px;
+            color: var(--secondary-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-body p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary-dark);
+            color: #f1ebd9;
+            padding: 80px 20px;
+            border-top: 3px solid var(--accent-bronze);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--accent-bronze);
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #d8cebc;
+        }
+
+        .contact-info p i {
+            color: var(--accent-bronze);
+            font-size: 18px;
+        }
+
+        .qr-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--primary-dark);
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .qr-box img {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #1a0f0a;
+            color: #9c897c;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media(max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-hat-cowboy"></i> WESTERA</a>
+            <ul class="nav-links">
+                <li><a href="#street">Western Street</a></li>
+                <li><a href="#terrace">Teras Bar</a></li>
+                <li><a href="#saloon">Saloon & Havuz</a></li>
+                <li><a href="#kids">Çocuk Alanı</a></li>
+                <li><a href="#sports">Western Sports</a></li>
+                <li><a href="#teepee">Kızıldereli Locaları</a></li>
+                <li><a href="#contact" class="book-btn">İletişim</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WESTERA HOTEL & RESORT</h1>
+            <p>Antalya Manavgat Kızılot'un eşsiz sahilinde Vahşi Batı ruhunu lüks ve konforla buluşturan benzersiz bir tatil deneyimi.</p>
+            <a href="#contact" class="btn-main">İletişim ve Bilgi</a>
+        </div>
+    </section>
+
+    <!-- Western Street -->
+    <section class="container" id="street">
+        <div class="section-title">
+            <h2>Western Street & Sahil Promenadı</h2>
+            <p>Geçmişin nostaljik batı kasabası sokakları, fotoğraf kabinleri ve sahil yürüyüş yollarıyla yeniden hayat buluyor.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="Batı Esintili Sahil Resortu Promenadı.png" alt="Western Street" class="feature-img">
+                <div class="feature-body">
+                    <h3>Western Street Alışveriş ve Eğlence Sokağı</h3>
+                    <p>Ahşap dükkanlar, hatıra fotoğraf kabinleri ve yöresel hediyelik eşyalarla dolu, Akdeniz mavisine bakan eşsiz promenadımızda keyifli yürüyüşler yapın.</p>
+                </div>
+            </div>
+            <div class="feature-card" id="terrace">
+                <img src="Gün Işığında Kayalık Manzaralı Resort Terası (1).png" alt="Teras Bar" class="feature-img">
+                <div class="feature-body">
+                    <h3>Teras Bar & Dinlenme Alanı</h3>
+                    <p>Kayalık manzara ve eşsiz gün batımı eşliğinde yudumlayacağınız özel kokteyller ve sıcak atmosferimiz sizi bekliyor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saloon & Pool -->
+    <section class="container" id="saloon" style="background: #f4efe6; max-width: 100%; padding: 80px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-title">
+                <h2>Saloon & Tropik Havuz</h2>
+                <p>Serin suların tadını çıkarırken havuz içi barımızda western temalı serinletici içeceklerinizi yudumlayın.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="Gün Işığında Tropik Saloon Havuzu.png" alt="Saloon Havuz" class="feature-img">
+                    <div class="feature-body">
+                        <h3>Saloon Pool Bar</h3>
+                        <p>Vahşi batı saloon konseptiyle tasarlanmış havuz barımızda müziğin, güneşin ve serin havuzun keyfini doyasıya çıkarın.</p>
+                    </div>
+                </div>
+                <div class="feature-card" id="kids">
+                    <img src="ChatGPT Image 22 Eyl 2026 21_57_18.png" alt="Çocuk Oyun Alanı ve Maden Treni" class="feature-img">
+                    <div class="feature-body">
+                        <h3>Çocuk Oyun Alanı & Maden Treni</h3>
+                        <p>Minik maceraperestler için özel olarak tasarlanmış maden treni, altın arama havuzları ve güvenli oyun parklarımız.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Western Sports & Teepee -->
+    <section class="container" id="sports">
+        <div class="section-title">
+            <h2>Aktiviteler & Kızıldereli Locaları</h2>
+            <p>Yetişkinler için geleneksel western beceri parkurları ve sahilde unutulmaz Kızıldereli çadır deneyimi.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="WhatsApp Image 2026-10-17 at 13.02.36.jpeg" alt="Western Sports" class="feature-img">
+                <div class="feature-body">
+                    <h3>Yetişkin Western Deneyim Alanı</h3>
+                    <p>Kement atma, nal atma ve fıçı parkuru gibi geleneksel oyunlarla tatilinize heyecan ve rekabet katın.</p>
+                </div>
+            </div>
+            <div class="feature-card" id="teepee">
+                <img src="ChatGPT Image 22 Eyl 2026 22_00_40.png" alt="Kızıldereli Locaları" class="feature-img">
+                <div class="feature-body">
+                    <h3>Kızıldereli Sahil Locaları</h3>
+                    <p>Sahil kenarında yer alan özel konsept teepee (Kızıldereli) localarımızda gün boyu konforun ve özel servis hizmetinin tadını çıkarın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & QR Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>İletişim Bilgileri</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Kızılot / Manavgat, Antalya, Türkiye</p>
+                <p><i class="fa-solid fa-phone"></i> +90 242 555 10 10</p>
+                <p><i class="fa-solid fa-envelope"></i> info@westerahotel.com</p>
+                <p><i class="fa-solid fa-globe"></i> www.westerahotel.com</p>
+                <p><i class="fa-brands fa-instagram"></i> @westerahotel</p>
+            </div>
+            <div class="qr-box">
+                <h4 style="margin-bottom: 15px; font-size: 16px; color: #2b1810;">Mobil / QR Erişim</h4>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://westerahotel.github.io" alt="QR Kod">
+                <p style="font-size: 12px; color: #6b5344; margin-top: 10px;">Telefonunuzla taratarak siteyi anında açın!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Westera Hotel & Resort. Tüm Hakları Saklıdır. @westerahotel</p>
+    </footer>
+
+</body>
+</html>
